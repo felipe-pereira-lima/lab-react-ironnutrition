@@ -1,15 +1,20 @@
 import React, { Component } from 'react';
 import './App.scss';
 
-import meals from './meals';
+import meals from './meals.json';
+
+import MealBox from './Component/MealBox';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      meals: meals
+    };
+  }
+
   render() {
-    return (
-      <div>
-        <p>Sample App</p>
-      </div>
-    );
+    return <div>{<MealBox />}</div>;
   }
 }
 
